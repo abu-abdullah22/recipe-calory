@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unknown-property */
+import { MdAccountCircle } from "react-icons/md";
 const Header = () => {
   return (
     <div className="container mx-auto mt-6">
@@ -39,7 +40,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl">Recipe Calories</a>
+          <a className="btn btn-ghost text-3xl text-[#150B2B] font-bold">Recipe Calories</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-[#150B2BB2] text-[16px] font-normal">
@@ -59,8 +60,8 @@ const Header = () => {
             
         </div>
         <div className="navbar-end">
-          <input type="text" placeholder="Search" className="bg-[#F3F3F4] p-2 rounded-[50px] mr-2"/>
-          <a className="btn">Button</a>
+          <input type="text" placeholder="Search" className="hidden md:block bg-[#F3F3F4] p-2 rounded-[50px] mr-2"/>
+          <a className=" text-4xl text-[#0BE58A]"><MdAccountCircle /></a>
         </div>
       </div>
     </div>
