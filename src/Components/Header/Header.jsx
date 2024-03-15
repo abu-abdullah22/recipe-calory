@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { MdAccountCircle } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 const Header = () => {
   return (
     <div className="container mx-auto mt-6">
@@ -60,7 +61,10 @@ const Header = () => {
             
         </div>
         <div className="navbar-end">
-          <input type="text" placeholder="Search" className="hidden md:block bg-[#F3F3F4] p-2 rounded-[50px] mr-2"/>
+          <div className="hidden md:flex items-center bg-[#F3F3F4] p-2 rounded-[50px] mr-2 gap-2">
+          <FaSearch className=" text-[17px]" />
+          <input type="text" placeholder="Search" className="bg-[#F3F3F4] text-[#150B2BB2]"/>
+          </div>
           <a className=" text-4xl text-[#0BE58A]"><MdAccountCircle /></a>
         </div>
       </div>
