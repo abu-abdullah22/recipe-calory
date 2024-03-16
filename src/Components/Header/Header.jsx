@@ -3,7 +3,7 @@ import { MdAccountCircle } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 const Header = () => {
   return (
-    <div className="container mx-auto mt-6">
+    <div className="container mx-auto mt-6 w-[90vw]">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
