@@ -7,15 +7,20 @@ import Recipies from "./Components/Recipies/Recipies";
 import Title from "./Components/Title/Title";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Preparing from "./Components/Preparing/Preparing";
 
 
 
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [currentCooking, setCurrentCooking] = useState([]) ;
+  const [prepareTime, setPrepareTime] = useState(0) ;
+  const [calories, setCalories] = useState(0) ;
+
 
   const handleAddToCart = (recipe) => {
-    const alreadyExists = cart.find(c=> c.recipe_id === recipe.recipe_id) ;
+    const alreadyExists = cart.find(c=> c.recipe_id == recipe.recipe_id) ;
       if(!alreadyExists){
       const newRecipe = [...cart, recipe] ;
       setCart(newRecipe) ;
@@ -24,6 +29,22 @@ function App() {
       }
       
   }
+
+  const handlePreparing = (id , recipe) =>{
+    console.log(recipe);
+    const newCart = cart.filter(c=> c.recipe_id != id) ;
+    setCart(newCart);
+    setCurrentCooking([...currentCooking, recipe]) ;
+
+    const newPrepareTime = prepareTime + recipe.preparing_time ;
+    setPrepareTime(newPrepareTime) ;
+
+    const newCalories = calories + recipe.calories ;
+    setCalories(newCalories) ;
+
+   
+  }
+
   return (
     <div>
       <Header></Header>
@@ -31,7 +52,10 @@ function App() {
       <Title></Title>
       <div className="md:flex">
       <Recipies handleAddToCart={handleAddToCart}></Recipies>
-      <Cart cart={cart}></Cart>
+     <div className="w-1/3">
+     <Cart cart={cart} handlePreparing={handlePreparing}></Cart>
+     <Preparing currentCooking={currentCooking} prepareTime={prepareTime} calories={calories}></Preparing>
+     </div>
       </div>
       <ToastContainer />
     </div>

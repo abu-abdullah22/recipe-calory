@@ -1,5 +1,6 @@
 import { FaRegClock } from "react-icons/fa";
 import { MdOutlineLocalFireDepartment } from "react-icons/md";
+import propTypes from 'prop-types' ;
 const Recipy = ({recipe, handleAddToCart}) => {
     const {recipe_image, recipe_name, short_description, ingredients, preparing_time, calories}= recipe ;
     return (
@@ -12,19 +13,19 @@ const Recipy = ({recipe, handleAddToCart}) => {
     <h2 className="card-title">{recipe_name}</h2>
     <p>{short_description}</p>
     <div>
-        <p className="text-[#282828] font-semibold">Ingredients :</p>
+        <p className="text-[#282828] font-semibold">Ingredients : {ingredients.length}</p>
         {
-            ingredients.map(ingredient => <li key={ingredient.idx} className="text-[#878787]">{ingredient}</li>)
+            ingredients.map((ingredient, idx) => <li key={idx} className="text-[#878787]">{ingredient}</li>)
         }
     </div>
     <div className="flex justify-between">
        <div className="flex items-center gap-2">
        <FaRegClock />
-        <p> {preparing_time} </p>
+        <p> {preparing_time} min </p>
        </div>
        <div className="flex items-center gap-2">
        <MdOutlineLocalFireDepartment />
-        <p>{calories}</p>
+        <p>{calories} calories</p>
        </div>
     </div>
     <div className="card-actions">
@@ -35,5 +36,9 @@ const Recipy = ({recipe, handleAddToCart}) => {
         </div>
     );
 };
+Recipy.propTypes ={
+  recipe : propTypes.object ,
+  handleAddToCart : propTypes.func
+}
 
 export default Recipy;
