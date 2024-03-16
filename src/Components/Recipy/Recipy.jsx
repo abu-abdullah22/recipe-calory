@@ -5,7 +5,7 @@ const Recipy = ({recipe, handleAddToCart}) => {
     const {recipe_image, recipe_name, short_description, ingredients, preparing_time, calories}= recipe ;
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl md:h-[685px] mb-5">
+            <div className="card bg-base-100 shadow-xl md:h-[685px] mb-5">
   <figure className="px-10 pt-10">
     <img src={recipe_image} alt="Shoes" className="rounded-xl" />
   </figure>

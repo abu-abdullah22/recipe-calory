@@ -44,7 +44,7 @@ const Header = () => {
           <a className="btn btn-ghost text-3xl text-[#150B2B] font-bold">Recipe Calories</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[#150B2BB2] text-[16px] font-normal">
+          <ul className="menu menu-horizontal px-1 text-[#150B2BB2] text-[16px] font-normal ml-24">
             <li>
               <a>Home</a>
             </li>
