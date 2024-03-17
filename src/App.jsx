@@ -52,7 +52,7 @@ function App() {
       <Title></Title>
       <div className="md:flex gap-5 container mx-auto">
       <Recipies handleAddToCart={handleAddToCart}></Recipies>
-     <div className="">
+     <div>
      <Cart cart={cart} handlePreparing={handlePreparing}></Cart>
      <Preparing currentCooking={currentCooking} prepareTime={prepareTime} calories={calories}></Preparing>
      </div>
