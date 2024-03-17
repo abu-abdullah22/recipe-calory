@@ -50,7 +50,7 @@ function App() {
       <Header></Header>
       <Banner></Banner>
       <Title></Title>
-      <div className="md:flex gap-5 container mx-auto w-[95vw]">
+      <div className="md:flex gap-5 container mx-auto">
       <Recipies handleAddToCart={handleAddToCart}></Recipies>
      <div className="w-1/3">
      <Cart cart={cart} handlePreparing={handlePreparing}></Cart>
