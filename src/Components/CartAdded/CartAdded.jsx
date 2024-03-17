@@ -8,7 +8,7 @@ const CartAdded = ({ c , idx, handlePreparing}) => {
         <td className="p-5">{c.recipe_name}</td>
         <td className="p-5">{c.preparing_time} min</td>
         <td className="p-5">{c.calories} calories</td>
-        <td><button className="btn bg-[#0BE58A] text-[#150B2B]" onClick={()=> handlePreparing(c.recipe_id, c)}>Preparing</button></td>
+        <td><button className="btn bg-[#0BE58A] w-[85px] text-[#150B2B]" onClick={()=> handlePreparing(c.recipe_id, c)}>Preparing</button></td>
       </tr>
     </>
   );

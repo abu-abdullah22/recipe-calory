@@ -10,7 +10,7 @@ const Recipies = ({handleAddToCart}) => {
         .then(data => setRecipies(data))
     },[])
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {
                 recipies.map((recipe,idx) => <Recipy recipe={recipe} key={idx} handleAddToCart={handleAddToCart}></Recipy>)
             }
